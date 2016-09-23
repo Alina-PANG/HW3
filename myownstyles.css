@@ -1,0 +1,25 @@
+.comments{
+	font-size: 15px;
+}
+.center{
+	text-align: center;
+}
+.headers .center{
+	background-color: lightblue;
+}
+.left-element{
+	text-align: left;
+	position: relative;
+	left: 10px;
+}
+.right-element{
+	text-align: right;
+	position: relative;
+	right: 10px;
+}
+.main-part{
+	background-color: aliceblue;
+}
+.left-div{}
+.middle-div{}
+.right-div{}
