@@ -1,58 +1,106 @@
-.comments{
-	font-size: 15px;
+body{ 
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
-.center{
-	text-align: center;
+#header1 a{
+	color: white;
+	text-decoration: none;
 }
-.headers .center{
-	background-color: lightblue;
+.header3 a{
+	color: black;
+	text-decoration: none;
 }
-.header2{
-	height: 250px;
-}
-.header3{
-	position:relative;
-	left:15%;
-}
-.left-element{
-	text-align: left;
-	position: relative;
-	left: 10px;
-}
-.right-element{
-	position: relative;
-	left: 70%;
-	margin: 20px;
-}
-.left-div{
-    background: #e9eff3;
-    position: fixed;
-    top: 40%;
-    bottom: 5%;
-    left: 0; }
-@media (max-width: 960px) {
-    .left-div {
-      border-right: 1px solid #d9e3ea;
-      width: 13%; } }
-@media (min-width: 961px) {
-    .left-div {
-      border-right: 1px solid #d9e3ea;
-      width: 15%; } }
-.floating-box{
-	position: relative;
-	top: 50px;
-	left: 250px;
-    display: inline-block;
-    width: 33%;
-    height: 200px;
-    margin: 50px;
-    align-items: center;
-    border: 3px solid beige;
-}
-p, h4, h3, h2, h1{
+#header1{
+	left:0;
+	top: 0;
+	position: fixed;
+	height: 5%;
+	background-color: black;
+	color: white;
+	width: 100%;
+	display: flex;
 	font-family: tahoma;
 }
-p{
-	font-size: 20px;
+.left-element{
+	top: 10px;
+	position:relative;
+	left: 5%;
+	float: left;
+	width: 200px;
+}
+.right-element{
+	top: 10px;
+	position: relative;
+	left: 60%;
+}
+.header2{
+	position: absolute;
+	margin-top: 8%;
+	font-size: 50px;
+}
+.secElement{
+	margin-left: 60px;
+}
+.header3{
+	position: absolute;
+	font-size:20px;
+	display: inline;
+}
+.header3 img{
+	position: relative;
+	top: -20px;
+	left: 220%;
+	height: 280px;
+}
+.headers{
+	font-family: "Libre Baskerville";
+	font-weight: bold;
+	color: #404040;
+	margin-left: 5%;
+	font-family: 
+}
+.main-part{
+	position: absolute;
+	margin-top: 20%;
+	left: 5%;
+}
+ul{
+	padding: 0;
+	list-style-type: none;
+}
+.header3 li{
+	position: relative;
+	top: 200px;
+	font-size: 15px;
+	font-family: tahoma;
+	display:inline;
 }
 
+.left-nav{
+	float:left;
+	width: 350px;
+}
+.left-nav .part1{
+	height: 400px;
+}
+.left-nav .part2{
+	margin-top: 50px;
+	height: 400px;
+	font-family: comic;
+	color: #404040;
+	font-weight: bold;
+}
+.left-nav a{
+	font-family: comic;
+	color: #404040;
+	text-decoration: none;
+	line-height: 2;
+	font-weight: bold;
+}
+.content{
+	margin-top: 15px;
+	float:left;
+	height: 300px;
+	font-size: 25px;
+}

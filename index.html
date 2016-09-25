@@ -3,94 +3,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="myownstyles.css">
 	<title>Alina's Blog</title>
 </head>
 <body>
     
     <!--This is the section of the first row-->
-    <section class="headers">
-       <div class="container header1">
-            <a class="comments left-element">Welcome, friend!</a> 
-            <a class="right-element">Sign up</a>
-            <a class="right-element">Register</a>
+  
+       <div id="header1">
+            <a href="#" class="left-element">Welcome, friend!</a> 
+            <a href="#" class="right-element">Sign up</a>
+            <a href="#" class="right-element secElement">Register</a>
        </div> 	
-
-       <div class="jumbotron center header2">
-            <div class="container">
-        	      <h1>Alina's Blog</h1>
+    <section class="headers">
+       <div class="header2">
+            <div>
+        	      <p>Alina's Blog</p>
         	</div>
-    </div>
+      </div>
+      <div class="header3">
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="" class="secElement">About</a>
+            </li>
+            <li>
+                <a href="" class="secElement">Contact</a>
+            </li>
+        </ul>
+            <img src="http://www.wowdsgn.com/media/catalog/product/cache/1/mainimg_1/9df78eab33525d08d6e5fb8d27136e95/i/m/img_3724.jpg">
+      </div>
     </section>
-
-    <!--Elements below the headers-->
-    <section>
-        <div class="container header3">
-            <div class="row"><!--all will be in the one row-->
-                <div class="col-sm-4">
-                   <h2>About me</h2>
-                </div>
-            
-                <div class="col-sm-4">
-                   <h2>Contact</h2>
-                </div>
-                <div class="col-sm-4">
-                   <h2>Comments</h2>
-                </div>
-            </div>
-        </div>
-     </section>
 
      <!--Main contains-->
      <section class="main-part">
-        <div class="left-div">
-            <h3>Services</h3>
-            <br>
-            <p>
-                Login
-            </p>
-            <p>
-                Sign up now!
-            </p>
-            <p>
-                FAQ
-            </p>
+        <div class="left-nav part1">
+            <ul>
+               <li><a href="">First Blog Post</a></li>
+               <li><a href="">25 Sept, 2016</a></li>
+               <li><a href="">Login</a></li>
+               <li><a href="">Leave a comment</a></li>
+               <li><a href="">Message</a></li>
+            </ul>
+            <div class="part2">
+                <p>
+                    Content
+                </p>
+                <p>My first post</p>
+            </div>
         </div>
 
 
-        <div>
-            <div class="floating-box">
-                <p>
-                    Movie
-                </p>
+        <div class="content">
+            <div id="conbody">
+                This is the first post.
             </div>
-            <div class="floating-box">
-                <p>
-                    Music
-                </p>
-            </div>
-            <div class="floating-box">
-                <p>
-                    Friends
-                </p>
-            </div>
-            <div class="floating-box">
-                <p>
-                    Travels
-                </p>
-            </div>
-            <div class="floating-box">
-                <p>
-                    Books
-                </p>
-            </div>
-            <div class="floating-box">
-                <p>
-                    Photos
-                </p>
-            </div>
-    
         </div>
 
      </section>
