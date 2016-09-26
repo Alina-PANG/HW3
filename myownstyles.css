@@ -6,17 +6,19 @@ body{
 #header1 a{
 	color: white;
 	text-decoration: none;
+    opacity: 1.0;
 }
 .header3 a{
-	color: black;
+	color: #404040;
 	text-decoration: none;
+	z-index: -1;
 }
 #header1{
 	left:0;
 	top: 0;
 	position: fixed;
 	height: 5%;
-	background-color: black;
+	background-color: #404040;
 	color: white;
 	width: 100%;
 	display: flex;
@@ -25,7 +27,7 @@ body{
 .left-element{
 	top: 10px;
 	position:relative;
-	left: 5%;
+	left: 10%;
 	float: left;
 	width: 200px;
 }
@@ -35,35 +37,42 @@ body{
 	left: 60%;
 }
 .header2{
+	width: 100%;
 	position: absolute;
 	margin-top: 8%;
 	font-size: 50px;
+	z-index: -1;
 }
 .secElement{
 	margin-left: 60px;
 }
 .header3{
-	position: absolute;
+	width: 100%;
+	height: 30px;
+	position: relative;
+	left:60%;
 	font-size:20px;
 	display: inline;
 }
 .header3 img{
 	position: relative;
 	top: -20px;
-	left: 220%;
+	left: 200%;
 	height: 280px;
+	z-index: -1;
 }
 .headers{
 	font-family: "Libre Baskerville";
 	font-weight: bold;
 	color: #404040;
-	margin-left: 5%;
-	font-family: 
+	margin-left: 10%;
+	width: 100%;
 }
 .main-part{
-	position: absolute;
-	margin-top: 20%;
-	left: 5%;
+	position: relative;
+	width: 100%;
+	top: 250px;
+	left: 10%;
 }
 ul{
 	padding: 0;
@@ -76,13 +85,19 @@ ul{
 	font-family: tahoma;
 	display:inline;
 }
-
+.content{
+	margin-top: 22px;
+	float:left;
+	margin-left: 50px;
+	height: 300px;
+	font-size: 20px;
+	color: #404040;
+	font-family: "Lucida Grande";
+}
 .left-nav{
 	float:left;
-	width: 350px;
-}
-.left-nav .part1{
-	height: 400px;
+	width: 300px;
+	border-right: 1px solid #404040;
 }
 .left-nav .part2{
 	margin-top: 50px;
@@ -90,6 +105,11 @@ ul{
 	font-family: comic;
 	color: #404040;
 	font-weight: bold;
+	line-height: 0.8;
+}
+.part2 a{
+	line-height: 1;
+	font-style: italic;
 }
 .left-nav a{
 	font-family: comic;
@@ -97,10 +117,5 @@ ul{
 	text-decoration: none;
 	line-height: 2;
 	font-weight: bold;
-}
-.content{
-	margin-top: 15px;
-	float:left;
-	height: 300px;
-	font-size: 25px;
+	font-style: italic;
 }
