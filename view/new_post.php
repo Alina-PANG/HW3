@@ -4,7 +4,7 @@
   <title>Create a new post</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="static/css/myownstyles.css">
+  <link rel="stylesheet" href="../static/css/myownstyles.css">
 </head>
 <body>
 
@@ -37,15 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $content = $_POST["content"];
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+
+require_once(../../constant.php);
 
 $sql = "INSERT INTO Posts (title, create_date, content)
-VALUES ($title, , $content)";
+VALUES ($title, date(Y-m-d), $content)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";

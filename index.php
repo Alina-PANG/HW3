@@ -12,8 +12,8 @@
   
        <div id="header1">
             <a href="#" class="left-element">Welcome, friend!</a> 
-            <a href="login_form.html" class="right-element">Sign in</a>
-            <a href="register_form.html" class="right-element secElement">Register</a>
+            <a href="view/login_form.html" class="right-element">Sign in</a>
+            <a href="view/register_form.html" class="right-element secElement">Register</a>
        </div> 	
     <section class="headers">
        <div class="header2">
@@ -52,9 +52,12 @@
                 <p>
                     Content
                 </p>
-                <ul>
-                   <li><a href="#">My first post</a></li>
-                </ul>
+                
+                  <?php
+                     header("Location: view/content.php");
+                     exit;
+                  ?>
+
             </div>
         </div>
 

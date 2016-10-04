@@ -1,5 +1,4 @@
 <?php //login.php
-   $servername = "localhost";
    $dbname = "blog";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,13 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
   }
 }
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
+require_once(../../constant.php);
 $sql = "INSERT INTO Users (firstname, lastname, username, password, country)
 VALUES ($firstname, $lastname, $username, $password, $country)";
 

@@ -168,3 +168,9 @@ input[type=submit]:hover {
     width: 800px;
 	height: 400px;
 }
+.directory{
+	font-size: 17px;
+	font-family: comic;
+	font-weight: italic;
+	font-color: #404040;
+}
