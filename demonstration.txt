@@ -1,0 +1,17 @@
+database name: blog
+table:
+Users
+CREATE TABLE Users (
+   username varchar(32),
+   password varchar(32),
+   firstname varchar(32),
+   lastname varchar(32),
+   country varchar(32)
+   )
+
+Posts:
+CREATE TABLE Posts (
+title varchar(32),
+create_date date,
+content text)
+   
