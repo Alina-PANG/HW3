@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="../static/css/myownstyles.css">
 </head>
 
-<?php //connect to the server
+<!--?php //connect to the server
 require_once('../config/constant.php');
-?>
+?-->
 
 <body>
 
   <!--<div id="header1">
-            <a href="#" class="left-element">Create a new post!!!</a> 
-       </div> 
+            <a href="#" class="left-element">Create a new post!!!</a>
+       </div>
 -->
     <section class="postform">
       <form action="post_submit.php" method="POST">

@@ -13,24 +13,30 @@
 	<title>Your Home Page</title>
 </head>
 <body>
-    
+
     <!--This is the section of the first row-->
-  
+
        <div id="header1">
-            <a href="#" class="left-element">Welcome, friend!</a> 
+            <a href="#" class="left-element">Welcome, friend!</a>
             <a href="backend/logout.php" class="right-element">Log out</a>
-       </div> 	
+       </div>
     <section class="headers">
        <div class="header2">
             <div>
-        	      <p><!--?php 
-                   if($_SESSION['username'] != null){
-                     echo $_SESSION['username'] . "'s Blog";
-                   }
-                   else{
-                     echo "Please Login First";
-                   }
-                   ?>-->
+        	      <p>
+                <?php
+    $sql = "SELECT name FROM tbl_users";
+    $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    // output data of each row
+    $row = $result->fetch_assoc();
+          echo $row["name"] . "'s Blog";
+        }
+  else {
+        echo "Empty String";
+  }
+  $conn->close();
+                   ?>
                  </p>
                 <hr>
         	</div>
@@ -56,9 +62,9 @@
         <div class="left-nav part1">
             <ul>
                <li><a href="view/new_post.php">Create a new Post</a></li>
-               <li><a href=""><?php 
+               <li><a href=""><?php
                  date_default_timezone_set("Asia/Singapore");
-                 echo date("Y-m-d") . "<br>" . date("l") . "<br>" . date("h:i:sa") . "<br>"; 
+                 echo date("Y-m-d") . "<br>" . date("l") . "<br>" . date("h:i:sa") . "<br>";
                  for($i=0;$i<3;$i++){
                     echo "<br>";
                  }
@@ -75,40 +81,13 @@
             </div>
         </div>
 
-        
+
         <div class="content">
             <div id="conbody">
 
-              <?php
 
-         
 
-               $sql = "SELECT * FROM tbl_posts";
-               $result = $conn->query($sql);
 
-      if ($result->num_rows > 0) {
-        // output data of each row
-            while($row = $result->fetch_assoc()) {
-              echo $row["id"]."<br>";
-              echo $row["title"]."<br>";
-              echo $row["content"]."<br>";
-            }
-        } 
-      else {
-            echo "No content";
-      }
-      $conn->close();
-
-/*              
-require_once('../config/constant.php');
-//second
-$result = mysql_query("SELECT * FROM tbl_posts");
-echo $result;
-
-while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-    printf("ID: %d  Title: %s", $row[0], $row[2]);  
-}*/
-     ?>
             </div>
         </div>
 

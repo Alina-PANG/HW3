@@ -12,3 +12,6 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
+
+INSERT INTO tbl_users VALUES ('admin', '19980312', '2016-10-14', 'China');

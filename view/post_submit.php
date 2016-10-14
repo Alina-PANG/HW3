@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["title"])) {
     $nameErr = "Title is required";
-  } 
+  }
   else {
     $title = $_POST["title"];
   }
@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $content = $_POST["content"];
 
 
-$sql = "INSERT INTO Posts (title, create_date, content)
+$sql = "INSERT INTO tbl_posts (content, title)
 VALUES ($title, date(Y-m-d), $content)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
-} 
+}
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
