@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="static/css/myownstyles.css">
-	<title>Alina's Blog</title>
+	<title>Blog</title>
 </head>
 <body>
     
@@ -18,23 +18,9 @@
     <section class="headers">
        <div class="header2">
             <div>
-        	      <p>Alina's Blog</p>
+        	      <p>Welcome to our Blogs!!</p>
                 <hr>
         	</div>
-      </div>
-      <div class="header3">
-        <ul>
-            <li>
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="" class="secElement">About</a>
-            </li>
-            <li>
-                <a href="" class="secElement">Contact</a>
-            </li>
-        </ul>
-
       </div>
     </section>
 
@@ -52,11 +38,6 @@
                 <p>
                     Content
                 </p>
-                
-                  <?php
-                     header("Location: view/content.php");
-                     exit;
-                  ?>
 
             </div>
         </div>

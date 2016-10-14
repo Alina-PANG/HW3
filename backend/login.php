@@ -1,14 +1,8 @@
 <?php //login.php
-session_start();
+   $dbname = "blog";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   if (isset($_POST['submit'])) {
-    if (empty($_POST['username']) || empty($_POST['password'])) {  
-      $error = "Username or Password is invalid";
-    else{
-      $_SESSION['username'] = $_POST['username'];
-    }
-  }
- /*if (empty($_POST["username"])) {
+  if (empty($_POST["username"])) {
     $nameErr = "Name is required";
   } else {
     $username = $_POST["name"];
@@ -17,11 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nameErr = "Password is required";
   } else {
     $password = $_POST["password"];
-  }*/
+  }
 }
 
-require_once('../config/constant.php');
-
+require_once(../config/constant.php);
 $sql = "INSERT INTO Users (firstname, lastname, username, password, country)
 VALUES ($firstname, $lastname, $username, $password, $country)";
 

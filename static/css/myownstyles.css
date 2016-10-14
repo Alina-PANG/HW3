@@ -23,6 +23,7 @@ body{
 	width: 100%;
 	display: flex;
 	font-family: tahoma;
+	z-index: 100;
 }
 .left-element{
 	top: 10px;
@@ -118,7 +119,7 @@ ul{
 	font-weight: bold;
 	font-style: italic;
 }
-input[type=text], #country{
+input[type=text], input[type=password], #country{
     width: 200px;
     padding: 12px 20px;
     margin: 20px 20px;
@@ -159,7 +160,7 @@ input[type=submit]:hover {
 	height: 100%;
 	z-index: -1;
 }
-.postform label, input[type=text], input[type=submit]{
+.postform label, input[type=text], input[type=password], input[type=submit]{
 	width: 70%;
 	vertical-align: middle;
 	margin-left: 15%;
