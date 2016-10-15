@@ -1,13 +1,18 @@
 <?php //login.php
+ob_start();
 session_start();
 require_once('../config/constant.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
  if (empty($_POST["title"])) {
-    $nameErr = "Title is required";
+    $titleErr = "Title is required";
   } else {
-    $name = $_POST["username"];
+    $title = $_POST["title"];
   }
+}
+
+if( isset($_SESSION['username'])=="" ){
+ header("Location: ../index.html");
 }
 
 //to make them legal
@@ -15,25 +20,28 @@ $title = trim($_POST['title']);
 $title = strip_tags($title);
 $title = htmlspecialchars($title);
 
+$content = trim($_POST['content']);
+$content = strip_tags($content);
+$content = htmlspecialchars($content);
+$content = chunk_split($content, 60);
+$content = wordwrap($content, 60, "<wbr>", true);
+
 date_default_timezone_set("Asia/Singapore");
 $date = date("Y-m-d");
 $time = date("h:i:s");
 
-$sql = "INSERT INTO tbl_users VALUES ('$name', '$password', '$email', '$date', '$time', '$country')";
-  echo '<a href="../index.html">Go back to the Homepage</a>';
+$status = $_POST['status'];
+$name = $_SESSION['username'];
 
-  if ($conn->query($sql) === TRUE) {
-    session_start();
-    $_SESSION['username'] = $name;
-    $_SESSION['date'] = $date;
-    $_SESSION['time'] = $time;
-    $_SESSION['country'] = $country;
-    header("Location: ../view/personal_index.php");
-  }
-  else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
+$sql = "INSERT INTO tbl_posts VALUES (NULL, '$name', '$title', '$content', $status, '$date', '$time')";
 
-
+if ($conn->query($sql) === TRUE) {
+  session_start();
+  $_SESSION['username'] = $name;
+  $_SESSION['status'] = $status;
+  header("Location: ../view/personal_index.php");
+}
+else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
 ?>

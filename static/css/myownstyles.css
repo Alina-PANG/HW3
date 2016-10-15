@@ -128,7 +128,6 @@ ul{
     border-radius: 4px;
     font-size: 18px;
 }
-
 input[type=submit] {
     width: 30%;
     background-color: #404040;
@@ -159,11 +158,17 @@ input[type=submit]:hover {
   margin-top: 100px;
 	z-index: -1;
 }
-.postform input[type=text], input[type=password], input[type=submit], textarea{
+.postform input, textarea{
 	width: 900px;
 	vertical-align: middle;
 	margin-left: 15%;
   font-size: 18px;
+}
+.postform input[type=radio]{
+  width: auto;
+}
+.postform input[type=submit]{
+  margin-top:50px;
 }
 .postform label{
   margin-left: 15%;

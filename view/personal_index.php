@@ -47,7 +47,7 @@ session_start();
      <section class="main-part">
         <div class="left-nav part1">
             <ul>
-               <li><a href="view/new_post.php">Create a new Post</a></li>
+               <li><a href="new_post.html">Create a new Post</a></li>
                <li><a href=""><?php
                  echo "Today is ";
                  date_default_timezone_set("Asia/Singapore");
@@ -80,10 +80,13 @@ session_start();
 
                  while($row = $result->fetch_assoc()) {
                  echo $row["id"]."<br>";
-             echo $row["title"]."<br>";
-             echo $row["content"]."<br>";
-             echo "created on " . $row["update_time"]."<br>";
-           }
+                 echo $row["title"]."<br>";
+                 //$cont = wordwrap((string)$row["content"], 60, "\n", false);
+                 echo $row["content"]."<br>";
+                 //echo chunk_split($row["content"], 60);
+                 echo "created on " . $row["update_time"]. $row["update_date"] . "<br>";
+                   for($i=0; $i<3;$i++){ echo "<br>";}
+                 }
               }
                    else {
                       echo "Empty String";

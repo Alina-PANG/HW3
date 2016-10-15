@@ -24,8 +24,10 @@ require_once('../config/constant.php');
            <label for="ptitle">Title</label><br>
            <input type="text" id="ptitle" name="title"><br>
            <label>Content</label><br>
-           <textarea rows="20" cols="60" name="content"></textarea>
-
+           <textarea rows="20" cols="20" name="content"></textarea><br>
+           <label for="sta">Status</label><br>
+           <input type="radio" id="sta" name="status" value=true checked> Public<br>
+           <input type="radio" id="sta" name="status" value=false> Private<br>
     <input type="submit" value="Submit">
    </form>
 
