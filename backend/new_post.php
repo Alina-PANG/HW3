@@ -1,57 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Create a new post</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../static/css/myownstyles.css">
-</head>
-<body>
-
-  <div id="header1">
-            <a href="#" class="left-element">Create a new post!!!</a> 
-       </div> 
-
-    <section class="postform">
-      <form method="POST">
-           <br><br>
-           <label for="ptitle">Title</label>
-           <input type="text" id="ptitle" name="title"><br>
-           <label for="pcontent">Content</label>
-           <input type="text" id="pcontent" class="post_content" name="content"><br>
-
-    <input type="submit" value="Submit">
-  </form>
-    </section>
-
-<?php //new post.php
-   $servername = "localhost";
-   $dbname = "blog";
+<?php //login.php
+session_start();
+require_once('../config/constant.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["title"])) {
+ if (empty($_POST["title"])) {
     $nameErr = "Title is required";
-  } 
-  else {
-    $title = $_POST["title"];
+  } else {
+    $name = $_POST["username"];
   }
 }
 
-$content = $_POST["content"];
+//to make them legal
+$title = trim($_POST['title']);
+$title = strip_tags($title);
+$title = htmlspecialchars($title);
 
-require_once(../config/constant.php);
+date_default_timezone_set("Asia/Singapore");
+$date = date("Y-m-d");
+$time = date("h:i:s");
 
-$sql = "INSERT INTO Posts (title, create_date, content)
-VALUES ($title, date(Y-m-d), $content)";
+$sql = "INSERT INTO tbl_users VALUES ('$name', '$password', '$email', '$date', '$time', '$country')";
+  echo '<a href="../index.html">Go back to the Homepage</a>';
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} 
-else {
+  if ($conn->query($sql) === TRUE) {
+    session_start();
+    $_SESSION['username'] = $name;
+    $_SESSION['date'] = $date;
+    $_SESSION['time'] = $time;
+    $_SESSION['country'] = $country;
+    header("Location: ../view/personal_index.php");
+  }
+  else {
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
+  }
 
-$conn->close();
+
+}
 ?>
-</body>
-</html>

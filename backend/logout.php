@@ -1,12 +1,18 @@
+
+
 <?php
    session_start();
    ob_end_flush();
    session_destroy();
 
    echo "Thanks, you have already logout";
-   echo "<p><a href="../index.html">Back to Homepage</p>"
+
 ?>
 
+
+<?php
+  echo '<a href="../index.html">Go back to the Homepage</a>';
+ ?>
 <!--?php
 session_start();
 

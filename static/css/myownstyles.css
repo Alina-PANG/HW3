@@ -1,4 +1,4 @@
-body{ 
+body{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -119,14 +119,14 @@ ul{
 	font-weight: bold;
 	font-style: italic;
 }
-input[type=text], input[type=password], #country{
+.registerform input[type=text], input[type=password], #country{
     width: 200px;
     padding: 12px 20px;
     margin: 20px 20px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 18px
+    font-size: 18px;
 }
 
 input[type=submit] {
@@ -154,20 +154,27 @@ input[type=submit]:hover {
     border: 40px solid #f2f2f2;
 }
 .postform{
-	position: absolute;
-	width:100%;
-	background-color: #f2f2f2;
-	height: 100%;
+  width: 100%;
+  left: 0;
+  margin-top: 100px;
 	z-index: -1;
 }
-.postform label, input[type=text], input[type=password], input[type=submit]{
-	width: 70%;
+.postform input[type=text], input[type=password], input[type=submit], textarea{
+	width: 900px;
 	vertical-align: middle;
 	margin-left: 15%;
+  font-size: 18px;
 }
-.post_content{
-    width: 800px;
-	height: 400px;
+.postform label{
+  margin-left: 15%;
+  font-size: 20px;
+}
+.postform input[type=text]{
+  padding-top: 14px;
+  margin-bottom: 50px;
+}
+.postform textarea{
+  margin-bottom: 50px;
 }
 .directory{
 	font-size: 17px;

@@ -11,22 +11,24 @@
 require_once('../config/constant.php');
 ?-->
 
-<body>
+<body style="background-color:#f2f2f2;">
 
-  <!--<div id="header1">
-            <a href="#" class="left-element">Create a new post!!!</a>
+  <div id="header1">
+
+            <a href="personal_index.php" class="left-element">Back to my homepage</a>
+            <a href="../backend/logout.php" class="right-element">Log out</a>
        </div>
--->
+
     <section class="postform">
-      <form action="post_submit.php" method="POST">
-           <br><br>
-           <label for="ptitle">Title</label>
+      <form action="../backend/new_post.php" method="POST" id="usrform">
+           <label for="ptitle">Title</label><br>
            <input type="text" id="ptitle" name="title"><br>
-           <label for="pcontent">Content</label>
-           <input type="text" id="pcontent" class="post_content" name="content"><br>
+           <label>Content</label><br>
+           <textarea rows="20" cols="60" name="content"></textarea>
 
     <input type="submit" value="Submit">
-  </form>
+   </form>
+
     </section>
 
 
