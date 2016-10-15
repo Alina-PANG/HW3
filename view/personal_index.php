@@ -1,8 +1,5 @@
-<!--?php
-  session_start();
-?>-->
 <?php
-      require_once ('../config/constant.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,24 +15,14 @@
 
        <div id="header1">
             <a href="#" class="left-element">Welcome, friend!</a>
-            <a href="backend/logout.php" class="right-element">Log out</a>
+            <a href="../backend/logout.php" class="right-element">Log out</a>
        </div>
     <section class="headers">
        <div class="header2">
             <div>
         	      <p>
                 <?php
-    $sql = "SELECT name FROM tbl_users";
-    $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    // output data of each row
-    $row = $result->fetch_assoc();
-          echo $row["name"] . "'s Blog";
-        }
-  else {
-        echo "Empty String";
-  }
-  $conn->close();
+                   echo ("{$_SESSION['username']}"."'s Blog");
                    ?>
                  </p>
                 <hr>
@@ -53,7 +40,6 @@
                 <a href="" class="secElement">Contact</a>
             </li>
         </ul>
-
       </div>
     </section>
 
@@ -63,6 +49,7 @@
             <ul>
                <li><a href="view/new_post.php">Create a new Post</a></li>
                <li><a href=""><?php
+                 echo "Today is ";
                  date_default_timezone_set("Asia/Singapore");
                  echo date("Y-m-d") . "<br>" . date("l") . "<br>" . date("h:i:sa") . "<br>";
                  for($i=0;$i<3;$i++){
@@ -84,13 +71,29 @@
 
         <div class="content">
             <div id="conbody">
+                <?php
+                 require_once('../config/constant.php');
+                 $name = $_SESSION['username'];
+                 $sql = "SELECT * FROM tbl_posts WHERE user_name='$name'";
+                 $result = $conn->query($sql);
+                 if ($result->num_rows > 0) {
 
-
-
-
+                 while($row = $result->fetch_assoc()) {
+                 echo $row["id"]."<br>";
+             echo $row["title"]."<br>";
+             echo $row["content"]."<br>";
+             echo "created on " . $row["update_time"]."<br>";
+           }
+              }
+                   else {
+                      echo "Empty String";
+                 }
+              $conn->close();
+              ?>
             </div>
         </div>
 
      </section>
 </body>
 </html>
+<?php ob_end_flush(); ?>
