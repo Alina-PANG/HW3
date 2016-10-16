@@ -98,6 +98,7 @@ ul{
 .left-nav{
 	float:left;
 	width: 300px;
+  height: 100%;
 }
 .left-nav .part2{
 	margin-top: 50px;

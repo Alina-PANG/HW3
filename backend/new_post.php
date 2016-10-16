@@ -23,8 +23,6 @@ $title = htmlspecialchars($title);
 $content = trim($_POST['content']);
 $content = strip_tags($content);
 $content = htmlspecialchars($content);
-$content = chunk_split($content, 60);
-$content = wordwrap($content, 60, "<wbr>", true);
 
 date_default_timezone_set("Asia/Singapore");
 $date = date("Y-m-d");

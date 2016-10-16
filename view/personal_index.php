@@ -64,13 +64,6 @@ session_start();
                 <p>
                     Content
                 </p>
-
-            </div>
-        </div>
-
-
-        <div class="content">
-            <div id="conbody">
                 <?php
                  require_once('../config/constant.php');
                  $name = $_SESSION['username'];
@@ -79,10 +72,30 @@ session_start();
                  if ($result->num_rows > 0) {
 
                  while($row = $result->fetch_assoc()) {
-                 echo $row["id"]."<br>";
-                 echo $row["title"]."<br>";
+                 echo $row['title'] . "<br>";
+                 echo "----created on " . $row["update_date"] . "<br>";
+                 }
+              }
+                   else {
+                      echo "Empty String";
+                 }
+              ?>
+            </div>
+        </div>
+
+
+        <div class="content">
+            <div id="conbody">
+                <?php
+                 $name = $_SESSION['username'];
+                 $sql = "SELECT * FROM tbl_posts WHERE user_name='$name'";
+                 $result = $conn->query($sql);
+                 if ($result->num_rows > 0) {
+
+                 while($row = $result->fetch_assoc()) {
+                 echo "Title: " . $row["title"]."<br><br>";
                  //$cont = wordwrap((string)$row["content"], 60, "\n", false);
-                 echo $row["content"]."<br>";
+                 echo $row["content"]."<br><br>";
                  //echo chunk_split($row["content"], 60);
                  echo "created on " . $row["update_time"]. $row["update_date"] . "<br>";
                    for($i=0; $i<3;$i++){ echo "<br>";}
@@ -99,4 +112,4 @@ session_start();
      </section>
 </body>
 </html>
-<?php ob_end_flush(); ?>
+<?php //ob_end_flush(); ?>
