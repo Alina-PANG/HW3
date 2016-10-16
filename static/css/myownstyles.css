@@ -129,6 +129,14 @@ ul{
     border-radius: 4px;
     font-size: 18px;
 }
+.registerform input[type=submit]{
+	position: relative;
+	left: 30%;
+	width:200px;
+    padding: 12px 20px;
+    margin: 20px 20px;
+    display: inline-block;
+}
 input[type=submit] {
     width: 30%;
     background-color: #404040;
@@ -147,12 +155,18 @@ input[type=submit]:hover {
 .registerform {
 	margin-left: 30%;
 	margin-top: 10%;
-	width: 30%;
-	height: 200px
-    border-radius: 5px;
+	width: 25%;
+	height: auto;
+	border: auto;
     background-color: #f2f2f2;
-    border: 40px solid #f2f2f2;
+    border: 70px solid #f2f2f2;
 }
+
+.registerform label {
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+}​
 .postform{
   width: 100%;
   left: 0;
